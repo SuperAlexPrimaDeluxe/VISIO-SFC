@@ -5,13 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <title>VISIO SFC - Inscriptions à une session</title>
+  
 </head>
 
-<body>
-  <header>
-    <h1>VISIO SFC - Inscriptions à une session</h1>
+<body class="container is-four-fifths is-flex-direction-column">
+  <header class="block has-background-primary">
+    <h1 class="is-size-1 has-text-centered">VISIO SFC - Inscriptions à une session</h1>
     <nav>
       <ul>
         <li><a href="login.html">Connexion</a></li>
@@ -20,16 +21,19 @@
       </ul>
     </nav>
   </header>
-  <main>
+  <main class="section is-medium is-flex-direction-column">
     <a href="secretariat.html">ajout d'une formation</a>
     <a href="#">second blabla</a>
 
     <label for="session_select">Session</label>
-    <select name="session_select" id="session_select">
-      <option value="WebFront11">WebFront11</option>
-    </select>
+    <div class="select">
+      <select class="select" name="session_select" id="session_select">
+        <option value="WebFront11">WebFront11</option>
+      </select>
+    </div>
 
-    <label for="name">Nom de la session</label>
+
+
     <input type="text" id="name" name="name" required minlength="4" maxlength="25" size="10">
 
     <label for="site-search">Recherche une personne</label>
@@ -37,13 +41,7 @@
 
     <button>Recherche</button>
 
-    <div class="results">
-		  <ul>
-        <li>first</li>
-        <li>second</li>
-        <li>third</li>
-      </ul>
-		</div>
+
 
     <h2>Inscrits</h2>
     <ul>
@@ -51,8 +49,12 @@
     </ul>
 
   </main>
-  <footer>
-    <span>2022 - Cepgra</span>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>VISIOSFC</strong> by Chevalier Alexandre</a>.
+      </p>
+    </div>
   </footer>
 
 
