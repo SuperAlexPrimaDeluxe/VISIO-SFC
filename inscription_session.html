@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <title>VISIO SFC - Inscriptions à une session</title>
+</head>
+
+<body>
+  <header>
+    <h1>VISIO SFC - Inscriptions à une session</h1>
+    <nav>
+      <ul>
+        <li><a href="login.html">Connexion</a></li>
+        <li><a href="secretariat.html">Amdin</a></li>
+        <li><a href="stagiaires.html">User</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <a href="secretariat.html">ajout d'une formation</a>
+    <a href="#">second blabla</a>
+
+    <label for="session_select">Session</label>
+    <select name="session_select" id="session_select">
+      <option value="WebFront11">WebFront11</option>
+    </select>
+
+    <label for="name">Nom de la session</label>
+    <input type="text" id="name" name="name" required minlength="4" maxlength="25" size="10">
+
+    <label for="site-search">Recherche une personne</label>
+    <input type="search" id="recherche_personne" name="recherche_personne">
+
+    <button>Recherche</button>
+
+    <div class="results">
+		  <ul>
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+      </ul>
+		</div>
+
+    <h2>Inscrits</h2>
+    <ul>
+      <li>Jean Michel - jeanmich@gmail.com</li>
+    </ul>
+
+  </main>
+  <footer>
+    <span>2022 - Cepgra</span>
+  </footer>
+
+
+  <a href="auth.php?delog">Se déconnecter</a>
+</body>
+
+</html>
