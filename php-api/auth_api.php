@@ -25,7 +25,7 @@ if ( !isset($arrayPOST['login']) OR !isset($arrayPOST['password'])) :
     $response['message'] = "Il manque login et/ou password";
     $response['code'] = 500;   
 else:
-    $sql = sprintf("SELECT * FROM users WHERE login = '%s' AND password = '%s'",
+    $sql = sprintf("SELECT * FROM users WHERE email = '%s' AND password = '%s'",
         $arrayPOST['login'],
         $arrayPOST['password']    
     );
@@ -40,15 +40,15 @@ else:
         $row = $row[0];
         //print_r($row);
         $_SESSION['user'] = $row['id_users'];
-        $_SESSION['token'] = md5($row['login'].time());
+        $_SESSION['token'] = md5($row['email'].time());
         $_SESSION['expiration'] = time() + 1 * 600;
         $response['response'] = "OK connecté";
         $response['token'] = $_SESSION['token'];
-
+        $response['level'] = $row['level'];
     endif;
 endif;
 
 $response['code'] = ( isset($response['code']) ) ? $response['code'] : 200;
 
-//echo json_encode($response);
+echo json_encode($response);
 exit;

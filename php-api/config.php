@@ -14,6 +14,6 @@
         $connect->set_charset('utf8');
     endif;
 
-//require_once 'functions.php';
+require_once 'functions.php';
 
 //myPrint_r($connect);
