@@ -13,7 +13,7 @@ if ( isset($_GET['delog']) ) :
     $response['response'] = "déconnection";
     $response['time'] = date('Y-m-d,H:i:s');
     $response['code'] = 200;
-    echo json_encode($response);
+    //echo json_encode($response);
     exit;
 endif;
 
@@ -50,5 +50,5 @@ endif;
 
 $response['code'] = ( isset($response['code']) ) ? $response['code'] : 200;
 
-echo json_encode($response);
+//echo json_encode($response);
 exit;

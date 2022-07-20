@@ -3,17 +3,16 @@ if ( isset($_GET['delog']) ) :
     session_start();
     unset($_SESSION['user']);
     unset($_SESSION['token']);
-    header("location:auth.php");
     exit;
 endif;
 require 'config.php';
 if( isset($_POST['ident'])) :
     $sql = sprintf("SELECT * FROM users WHERE email = '%s' AND password = '%s'",
         $_POST['email'],
-        $_POST['password']    
-    );
+        $_POST['password']  
+);
     $result = $connect->query($sql);
-    echo $connect->error;
+    //echo $connect->error;
     //test si les data sont justes
     if( $result->num_rows > 0 ) :
         $user = $result -> fetch_assoc();
@@ -21,7 +20,16 @@ if( isset($_POST['ident'])) :
         $_SESSION['user'] = $user['firstname'];
         $_SESSION['pd'] = $user['lastname'];
         $_SESSION['token'] = md5($user['email'].time());
-        header("location:stagiaires.php");
+        $_SESSION['level']=$user["level"];
+        //header("location:stagiaires.php");
+     
+       if ($_SESSION['level'] == "stagiaire"){
+         header("location:stagiaires.php");
+       }
+       else if($_SESSION['level'] == "formateur"){
+        header("location:formateurs.php");
+       }
+	
         exit;
         //myPrint_r($_SESSION);
     else:

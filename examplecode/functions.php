@@ -1,3 +1,4 @@
+
 <?php
 function myPrint_r($value) {
     if(MODE == 'dev') :
